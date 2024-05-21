@@ -34,13 +34,14 @@ function setCars() {
 // Call the add function
 addNewCar.addEventListener('click', function () {
     formAddCar.classList.toggle("hide-form");
-    wrapperList.classList.remove("hide-form");
+    wrapperList.classList.toggle("hide-form");
     formSearchCar.classList.add("hide-form");
     formDeleteCar.classList.add("hide-form");
 });
 
 // Call the view car function
 viewCars.addEventListener('click', () => {
+    formAddCar.classList.add("hide-form");
     wrapperList.classList.toggle("hide-form");
     viewList();
 });
@@ -152,7 +153,7 @@ function sortCar() {
         sorted = true;
 
         ALL_CARS.sort((a, b) => {
-            if (a.price > b.price) {
+            if (a.stock > b.stock) {
                 return -1;
             } else {
                 return 1;
@@ -162,7 +163,7 @@ function sortCar() {
         sorted = false;
 
         ALL_CARS.sort((a, b) => {
-            if (a.price > b.price) {
+            if (a.stock > b.stock) {
                 return 1;
             } else {
                 return -1;
