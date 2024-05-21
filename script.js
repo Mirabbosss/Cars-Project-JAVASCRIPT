@@ -33,13 +33,16 @@ function setCars() {
 
 // Call the add function
 addNewCar.addEventListener('click', function () {
-    formAddCar.classList.toggle("hide-form")
+    formAddCar.classList.toggle("hide-form");
+    wrapperList.classList.remove("hide-form");
+    formSearchCar.classList.add("hide-form");
+    formDeleteCar.classList.add("hide-form");
 });
 
 // Call the view car function
 viewCars.addEventListener('click', () => {
-    wrapperList.classList.toggle("hide-form")
-    viewList()
+    wrapperList.classList.toggle("hide-form");
+    viewList();
 });
 
 // Call the delete function
