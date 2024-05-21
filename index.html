@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR PROJECT</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body style="background-image: url(./images.jpeg);">
+    <div class="container">
+        <div class="car-menu">
+            <div class="buttons">
+                <button id="add-car" class="glowing-btn"><span class="glowing-txt"><span>Add</span class="faulty-word">
+                        new car</span></button>
+                <button id="view-cars" class="glowing-btn"><span class="glowing-txt">View <span
+                            class="faulty-word">all</span> cars</span></button>
+                <button id="delete-car" class="glowing-btn"><span class="glowing-txt">Delete <span
+                            class="faulty-word">car</span></span></button>
+                <button id="search-car" class="glowing-btn"><span class="glowing-txt"><span
+                            class="faulty-word">Search</span> car</span></button>
+                <button id="sort-cars" class="glowing-btn"><span class="glowing-txt">Sort <span
+                            class="faulty-word">with</span> prices</span></button>
+            </div>
+
+            <div id="wrapper-add-car-btn">
+                <form action="#" id="add-car-form" class="hide-form">
+                    <label for="car-model">
+                    <h2 class="h2-faulty-word">Enter a car model</h2>
+                    <input type="text" id="car-model" placeholder="Enter a new car model" required>
+                    </label>
+
+                    <label for="car-name">
+                        <h2 class="h2-faulty-word">Enter a car name</h2>
+                        <input type="text" id="car-name" placeholder="Enter a new car name" required>
+                    </label>
+
+                    <label for="car-year">
+                        <h2 class="h2-faulty-word">Enter a car year</h2>
+                        <input type="text" id="car-year" placeholder="Enter a new car year" required>
+                    </label>
+
+                    <label for="car-color">
+                        <h2 class="h2-faulty-word">Enter car color</h2>
+                        <input type="text" id="car-color" placeholder="Enter a new car color" required>
+                    </label>
+
+                    <label for="car-stock">
+                        <h2 class="h2-faulty-word">Enter car stock</h2>
+                        <input type="number" id="car-stock" placeholder="Enter a new car stock" required>
+                    </label>
+
+                    <label for="car-price">
+                        <h2 class="h2-faulty-word">Enter car price</h2>
+                        <input type="number" id="car-price" placeholder="Enter a new car price" required>
+                    </label>
+
+                    <div class="wrap-btn">
+                        <button type="submit" class="form-btn" id="form-submit">
+                            <div class="spinner"></div>Add
+                        </button>
+
+                        <button type="reset" class="form-btn" id="form-reset">
+                            <div class="spinner"></div>Reset
+                        </button>
+                    </div>
+                </form>
+
+                <div id="div-for-answer">
+                </div>
+            </div>
+
+            <div id="wrapper-view-cars-btn" class="">
+                <div id="div-for-list">   
+                </div>
+            </div>
+
+            <div id="wrapper-delete-car-btn">
+                <form action="#" id="delete-car-form" class="hide-form">
+                    <label for="car-ID">
+                    <h2 class="h2-faulty-word">Enter a car ID to delete</h2>
+                    <input type="number" id="car-ID" placeholder="Enter a car ID" required>
+                    </label>
+
+                    <div class="wrap-btn">
+                        <button type="submit" class="form-btn" id="form-submit">
+                            <div class="spinner"></div>Delete
+                        </button>
+
+                        <button type="reset" class="form-btn" id="form-reset">
+                            <div class="spinner"></div>Clear ID
+                        </button>
+                    </div>
+                </form>
+
+                <div id="div-for-answer">
+                </div>
+            </div>
+
+            <div id="wrapper-search-car-btn">
+                <form action="#" id="search-car-form" class="hide-form">
+                    <label for="car-name">
+                    <h2 class="h2-faulty-word">Enter a car name to search</h2>
+                    <input type="text" id="car-search-name" placeholder="Enter a car name" required>
+                    </label>
+
+                    <div class="wrap-btn">
+                        <button type="submit" class="form-btn" id="form-submit">
+                            <div class="spinner"></div>Search
+                        </button>
+
+                        <button type="reset" class="form-btn" id="form-reset">
+                            <div class="spinner"></div>Clear
+                        </button>
+                    </div>
+                </form>
+
+                <div id="div-for-answer">
+                </div>
+
+                <div id="div-for-list">   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
