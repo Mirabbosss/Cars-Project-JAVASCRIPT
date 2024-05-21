@@ -32,7 +32,7 @@ function setCars() {
 }
 
 // Call the add function
-addNewCar.addEventListener('click', function() {
+addNewCar.addEventListener('click', function () {
     formAddCar.classList.toggle("hide-form")
 });
 
@@ -44,14 +44,18 @@ viewCars.addEventListener('click', () => {
 
 // Call the delete function
 deleteCar.addEventListener('click', () => {
+    formAddCar.classList.add("hide-form")
     wrapperList.classList.toggle("hide-form");
     formDeleteCar.classList.toggle("hide-form");
+    formSearchCar.classList.add("hide-form");
 });
 
 // Call the search function
 searchCar.addEventListener('click', () => {
+    formAddCar.classList.add("hide-form")
     wrapperList.classList.toggle("hide-form");
     formSearchCar.classList.toggle("hide-form");
+    formDeleteCar.classList.add("hide-form");
 })
 
 // Call the sort function
@@ -102,11 +106,11 @@ function viewList() {
 }
 
 // Delete submit and function
-formDeleteCar.onsubmit = (e) => {       
+formDeleteCar.onsubmit = (e) => {
     e.preventDefault();
 
     let delIdCar = carIdInput.value;
-    
+
     let deletedCar = ALL_CARS.findIndex(car => car.id == delIdCar)
     ALL_CARS.splice(deletedCar, 1)
     setCars()
@@ -124,23 +128,28 @@ formSearchCar.onsubmit = (e) => {
 
     let newAllCars = ALL_CARS.filter(car => car.name.toLowerCase().includes(srchNameCar))
 
+    if(newAllCars.lenght) {
         divForViewList.innerHTML = "";
     newAllCars.forEach(car => {
         divForViewList.innerHTML += `<div class="car-info"><h4>Model: <span class="red-word">${car.model}</span></h4><h4>Name: <span class="red-word">${car.name}</span></h4><h4>Year: <span class="red-word">${car.color}</span></h4><h4>Stock: <span class="red-word">${car.stock}</span></h4><h4>Price: <span class="red-word">$${car.price}</span></h4><h4>Car ID: <span class="red-word">${car.id}</span></h4></div>`
     })
-        divAnswer.innerHTML = "<h3>Search successfully. To see in the list, go to the section view all cars</h3>"
-     
+    divAnswer.innerHTML = "<h3>Search successfully. To see in the list, go to the section view all cars</h3>"
+    } else {
+        divAnswer.innerHTML = "<h3>Sorry, no car with this name was found, but you might like the following cars</h3>"
+        viewList()
+    }
+
     formDeleteCar.reset();
 }
 
 // Sort function
 let sorted = false;
 function sortCar() {
-    if(sorted === false) {
+    if (sorted === false) {
         sorted = true;
 
         ALL_CARS.sort((a, b) => {
-            if(a.price > b.price) {
+            if (a.price > b.price) {
                 return -1;
             } else {
                 return 1;
@@ -150,7 +159,7 @@ function sortCar() {
         sorted = false;
 
         ALL_CARS.sort((a, b) => {
-            if(a.price > b.price) {
+            if (a.price > b.price) {
                 return 1;
             } else {
                 return -1;
